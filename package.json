@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "graph": "nx graph",
+    "graph-affected": "nx affected:graph"
   },
   "private": true,
   "dependencies": {
