@@ -22,7 +22,11 @@
               },
               {
                 "sourceTag": "scope:client",
-                "onlyDependOnLibsWithTags": ["scope:common", "scope:client"]
+                "onlyDependOnLibsWithTags": ["scope:common", "scope:client", "scope:ui"]
+              },
+              {
+                "souceTag": "scope:ui",
+                "onlyDependOnLibsWithTags": ["scope:comon", "scope:ui"]
               }
             ]
           }

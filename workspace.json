@@ -7,6 +7,7 @@
     "blackstar": "apps/blackstar",
     "blackstar-e2e": "apps/blackstar-e2e",
     "client-feature-projects": "libs/client-feature-projects",
+    "client-ui": "libs/client-ui",
     "common": "libs/common",
     "common-feature-projects": "libs/common-feature-projects",
     "qontrol": "apps/qontrol",

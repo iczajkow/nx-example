@@ -1,6 +1,7 @@
 import { fetchProjects } from '@fullapp-example/client-feature-projects';
 import { ProjectResponse } from '@fullapp-example/common-feature-projects';
 import { useEffect, useState } from 'react';
+import {Title} from "@fullapp-example/client-ui";
 
 export function App() {
   const [state, setState] = useState<{
@@ -18,7 +19,8 @@ export function App() {
     <div>Loading...</div>
   ) : (
     <div>
-      <h1>Projects:</h1>
+      <Title title="Blackstar" />
+      <h2>Projects:</h2>
       <ul>
         {state.projects.map((project) => {
           return <li key={project.id}>{project.name}</li>;

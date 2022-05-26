@@ -21,6 +21,7 @@
       "@fullapp-example/client-feature-projects": [
         "libs/client-feature-projects/src/index.ts"
       ],
+      "@fullapp-example/client-ui": ["libs/client-ui/src/index.ts"],
       "@fullapp-example/common": ["libs/common/src/index.ts"],
       "@fullapp-example/common-feature-projects": [
         "libs/common-feature-projects/src/index.ts"
