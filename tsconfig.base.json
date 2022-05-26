@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@fullapp-example/api-feature-projects": [
+        "libs/api-feature-projects/src/index.ts"
+      ],
+      "@fullapp-example/client-feature-projects": [
+        "libs/client-feature-projects/src/index.ts"
+      ],
+      "@fullapp-example/common": ["libs/common/src/index.ts"],
+      "@fullapp-example/common-feature-projects": [
+        "libs/common-feature-projects/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

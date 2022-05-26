@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/blackstar/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/blackstar",
+        "index": "apps/blackstar/src/index.html",
+        "baseHref": "/",
+        "main": "apps/blackstar/src/main.tsx",
+        "polyfills": "apps/blackstar/src/polyfills.ts",
+        "tsConfig": "apps/blackstar/tsconfig.app.json",
+        "assets": [
+          "apps/blackstar/src/favicon.ico",
+          "apps/blackstar/src/assets"
+        ],
+        "styles": ["apps/blackstar/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/blackstar/src/environments/environment.ts",
+              "with": "apps/blackstar/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "blackstar:build",
+        "hmr": true,
+        "proxyConfig": "apps/blackstar/proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "blackstar:build:development"
+        },
+        "production": {
+          "buildTarget": "blackstar:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/blackstar/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/blackstar"],
+      "options": {
+        "jestConfig": "apps/blackstar/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:client", "scope:app"]
+}
